@@ -1,30 +1,27 @@
-def rotatearray(array, k):
-    """rotate array by k elements"""
-    #using multiple reversal technique for all elements
-    # using inplace reverseal technique
+def rotate_array(array, k):
+    """function to reverese array by k"""
+    # first % to make sure k is smaller than length of array
     k = k % len(array)
-    
+
+    # first rotate the whole array
     start = 0
-    end = len(array)-1
-    array = reversearrayutil(array, start, end)
+    end = len(array)
+    array = reverse_util(array, start, end)
 
-    k= k-1
+    # next rotate the first k elements
     start = 0
-    end = k
-    array=reversearrayutil(array, start, end)
+    k = k - 1
+    array = reverse_util(array, start, k)
 
-    start = k+1
-    end= len(array)-1
-    array= reversearrayutil(array, start, end)
+    # reverse the remaining elements
+    start = k + 1
+    end = len(array) - 1
+    array = reverse_util(array, start, end)
 
+
+def reverse_util(array, start, end):
+    while start <= end:
+        array[end], array[start] = array[start], array[end]
+        start += 1
+        end -= 1
     return array
-
-
-def reversearrayutil(array, start, end):
-     while start <= end:
-        array[start], array[end] = array[end], array[start]
-        start+=1
-        end-=1
-     return array
-
-print(rotatearray([1,2,3,4,5,6,7], 3))

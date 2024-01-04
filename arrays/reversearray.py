@@ -1,23 +1,12 @@
-def reversearray(array):
-    """function to rotate array"""
-    #accept array
-    #find middle index 
-    #swap elements in left and right index
-    #use two pointer technique
-
+def reverse_array(array):
+    """Function to reverse an array"""
+    # using swapping method
     if len(array) == 0:
-        return None
-    elif len(array)== 1:
-        return array
-    else:
-        left_pointer = 0
-        right_pointer = len(array)-1
+        raise ValueError("Invalid array length this one")
+    start = 0
+    end = len(array) - 1
+    while start <= end:
+        array[start], array[end] = array[end], array[start]
+        start += 1
+        end -= 1
 
-        while left_pointer <= right_pointer:
-            array[left_pointer], array[right_pointer] = array[right_pointer], array[left_pointer]
-            left_pointer+=1
-            right_pointer-=1
-        return array
-
-            
-print(reversearray([1,2,3,4,5, 6,7]))
