@@ -22,5 +22,25 @@ def mostfrequentel(array):
     return res
 
 
+def mostFreqEl2(array):
+    """using dictionary and looping once"""
+    # no sorting firstd
+    dict = {}
+    max_count = 1
+    curr_count = 1
+    result = array[0]
+
+    for i in range(1, len(array)):
+        if array[i] in dict:
+            dict[array[i]] += 1
+        else:
+            dict[array[i]] = 1
+
+        if dict[array[i]] > max_count:
+            max_count = dict[array[i]]
+            result = array[i]
+    return result
+
+
 def checkMostFreq():
     print(mostfrequentel([1, 1, 3, 4, 1, 7]))
