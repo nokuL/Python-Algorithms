@@ -7,7 +7,7 @@ def majorityElement(array):
         if array[i] != majority_el:
             count -= 1
             if count == 0:
-                majority_el = array[i + 1]
+                majority_el = array[i]
                 count += 1  # Update majority element candidate
         else:
             count += 1
