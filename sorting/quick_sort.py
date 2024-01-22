@@ -13,10 +13,11 @@ def partition(array, left, right):
     while i < j:
         while i < right and array[i] < pivot:
             i += 1
-        while j > left and array[j] >= pivot:
-            j += 1
+        while j > left and array[j] > pivot:
+            j -= 1
         if i < j:
             array[i], array[j] = array[j], array[i]
+
     if array[i] > pivot:
         array[right], array[i] = array[i], array[right]
 
