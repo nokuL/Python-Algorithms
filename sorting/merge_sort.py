@@ -15,7 +15,7 @@ def merge_sort(array):
     right = 0
     k = 0
 
-    while left < len(left_array) and right_array < len(right_array):
+    while left < len(left_array) and right < len(right_array):
         if left_array[left] < right_array[right]:
             array[k] = left_array[left]
             left += 1
